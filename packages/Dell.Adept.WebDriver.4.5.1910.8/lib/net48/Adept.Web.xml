@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adept.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Dell.Adept.Web.Driver">
+            <summary>
+            Class TestWebDriver.
+            </summary>
+            <seealso cref="T:OpenQA.Selenium.IWebDriver" />
+        </member>
+        <member name="P:Dell.Adept.Web.Driver.TestWebDriver">
+            <summary>
+            The web driver implementation
+            </summary>
+            <value>The adept driver.</value>
+        </member>
+        <member name="M:Dell.Adept.Web.Driver.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="N:Dell.Adept"/> class and initializes the driver to <see cref="T:OpenQA.Selenium.Chrome.ChromeDriver"/>.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.Web.Driver.#ctor(System.String,OpenQA.Selenium.DriverOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="N:Dell.Adept"/> class.
+            </summary>
+            <param name="webDriverName">Name of the web driver.</param>
+            <param name="options">The options. <see cref="T:OpenQA.Selenium.DriverOptions"/></param>
+        </member>
+        <member name="M:Dell.Adept.Web.Driver.#ctor(Dell.Adept.Web.WebDriverType,OpenQA.Selenium.DriverOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="N:Dell.Adept" /> class.
+            </summary>
+            <param name="webDriverType">Type of the web driver to create. <see cref="T:Dell.Adept.Web.WebDriverType" /></param>
+            <param name="options">The driver specific options. <see cref="T:OpenQA.Selenium.DriverOptions"/></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Dell.Adept.Web.Driver.InitWebDriver(Dell.Adept.Web.WebDriverType,OpenQA.Selenium.DriverOptions)">
+            <summary>
+            Initializes the web driver.
+            </summary>
+            <param name="webDriverType">Type of the web driver. <see cref="T:Dell.Adept.Web.WebDriverType" /></param>
+            <param name="driverOptions">The driver options. <see cref="T:OpenQA.Selenium.DriverOptions"/></param>
+        </member>
+        <member name="T:Dell.Adept.Web.Helper">
+            <summary>
+            Class Helper.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.Web.Helper.ResolveBrowser(System.String)">
+            <summary>
+            This method will resolve the browser that should be used to execute tests in this run. The resolution order is: TFS
+            Configuration, Environment Variable, App.Config, and if none are configured the Firefox browser will be chosen.
+            </summary>
+            <param name="browser">The browser string that is passed in from MTM to be parsed.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Dell.Adept.Web.Helper.ParseDriverConfig(System.String)">
+            <summary>
+            Parses the web driver configuration as passed into the test execution from MTM.
+            </summary>
+            <param name="input">The input string to be parsed to extract the selected browser.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:Dell.Adept.Web.WebDriverType">
+            <summary>
+            Enum WebDriverType
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Web.WebDriverType.ChromeDriver">
+            <summary>
+            The Chrome driver
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Web.WebDriverType.EdgeDriver">
+            <summary>
+            The Edge driver
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Web.WebDriverType.FirefoxDriver">
+            <summary>
+            The Firefox (Gecko) driver
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Web.WebDriverType.InternetExplorerDriver">
+            <summary>
+            The Internet Explorer driver
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Web.WebDriverType.RemoteWebDriver">
+            <summary>
+            Any self defined remotewebdriver
+            </summary>
+        </member>
+    </members>
+</doc>

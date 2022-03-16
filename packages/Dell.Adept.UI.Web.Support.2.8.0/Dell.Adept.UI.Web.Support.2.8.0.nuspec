@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Dell.Adept.UI.Web.Support</id>
+    <version>2.8.0</version>
+    <title>Dell.Adept.UI.Web.Support</title>
+    <authors>Adept Platform Team</authors>
+    <owners>Adept Platform Team</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extensions, Utilities, and more to make using the Adept and Selenium frameworks easier.</description>
+    <dependencies>
+      <dependency id="Selenium.Support" version="2.52.0" />
+      <dependency id="Selenium.WebDriver" version="2.52.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

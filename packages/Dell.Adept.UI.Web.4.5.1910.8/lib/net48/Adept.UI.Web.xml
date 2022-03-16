@@ -1,0 +1,1687 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adept.UI.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Dell.Adept.UI.Web.Pages.IPage">
+            <summary>
+            Interface IPage will be used by all Web Page class definitions to assure consistency and reuse.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.IPage.Elements">
+            <summary>
+            Elements of the page.
+            </summary>
+            <value>The elements of the page.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.IPage.WebDriver">
+            <summary>
+            The WebDriver reference for the page object.
+            </summary>
+            <value>The web driver.</value>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.IPage.IsActive">
+            <summary>
+            Validates that the driver is active on the page you've identified.
+            some examples would be to see the webDriver.url contains "Login.aspx" in the case that you are building a page
+            class for a login page.
+            The constructor of the BasePage uses this to determine whether or not you are on the page and will give feedback to
+            the test class that it is invalid what you are trying to do.
+            </summary>
+            <returns><c>true</c> if the page is active, <c>false</c> if it is not.</returns>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Pages.PageBase">
+            <summary>
+            Class PageBase.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.PageBase.#ctor(OpenQA.Selenium.IWebDriver@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Pages.PageBase" /> class.
+            </summary>
+            <param name="webDriver">The web driver.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.Url">
+            <summary>
+            Gets or sets the URL that this page is loaded from. 
+            </summary>
+            <value>The URL.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.Name">
+            <summary>
+            Gets or sets the name of the object that is to be tested.
+            </summary>
+            <value>The name of the object.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.ProductUnit">
+            <summary>
+            Gets or sets the name of the Product Unit that is responsible for the object that is to be tested.
+            </summary>
+            <value>The Product Unit responsible for this object
+            <example>eSupport</example></value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.Elements">
+            <summary>
+            Elements of the page.
+            </summary>
+            <value>The elements of the page.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.WebDriver">
+            <summary>
+            The WebDriver reference for the page object.
+            </summary>
+            <value>The web driver.</value>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.PageBase.IsActive">
+            <summary>
+            Validates that the driver is active on the page you've identified.
+            some examples would be to see the webDriver.url contains "Login.aspx" in the case that you are building a page
+            class for a login page.
+            The constructor of the BasePage uses this to determine whether or not you are on the page and will give feedback to
+            the test class that it is invalid what you are trying to do.
+            </summary>
+            <returns><c>true</c> if the page is active, <c>false</c> if it is not.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.PageBase.Validate">
+            <summary>
+            Validates the page. <remarks>This should be used by the page class
+            owner to specify what state is required for the page to be considered 'valid'
+            and ready for testing.</remarks>
+            </summary>
+            <returns><c>true</c> if the page is valid, <c>false</c> if it is not.</returns>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PageBase.Dell#Adept#Core#ITestable#TestablePath">
+            <summary>
+            Gets or sets the path for the object that is to be tested.
+            <example>URI for a web page;</example>
+            </summary>
+            <value>The path to the testable object.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Pages.PagePartBase">
+            <summary>
+            The PagePartBase class. This is an abstract class for concrete page parts to inherit from.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Pages.PagePartBase.ParentPage">
+            <summary>
+            The parent page. This is typically passed into the constructor of the concrete page object.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.PagePartBase.#ctor(Dell.Adept.UI.Web.Pages.IPage,OpenQA.Selenium.IWebElement@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Pages.PagePartBase" /> class.
+            </summary>      
+            <param name="page">The page.</param>
+            <param name="parentElement">The parent element.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PagePartBase.Elements">
+            <summary>
+            The IWebElements that are contained in the page part.
+            </summary>
+            <value>The IWebElements of the page part.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Pages.PagePartBase.ParentElement">
+            <summary>
+            The parent element of the page part. E.g. the div element that contains all of the child elements in the part.
+            </summary>
+            <value>The parent element.</value>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Pages.PagePartBase.Validate">
+            <summary>
+            Validates the pagepart.
+            </summary>
+            <returns><c>true</c> if the pagepart is valid, <c>false</c> if it is not.</returns>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.CannotFindElementWithNull">
+            <summary>
+              Looks up a localized string similar to Cannot find element with null values..
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.ChromeBrowserName">
+            <summary>
+              Looks up a localized string similar to Chrome.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.ElementNotFound">
+            <summary>
+              Looks up a localized string similar to Element Not Found. .
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.ElementTimeoutException">
+            <summary>
+              Looks up a localized string similar to Element Timeout Exception. .
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.ExceptionThrown">
+            <summary>
+              Looks up a localized string similar to Exception thrown. Please see Exception details .
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.PageFailedToLoad">
+            <summary>
+              Looks up a localized string similar to The Page failed to load properly. See Exception details..
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Resource.WaitTimeExpired">
+            <summary>
+              Looks up a localized string similar to The specified wait time has expired..
+            </summary>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AdeptBy">
+            <summary>
+            Extension Methods for the Selenium IWebElement By.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AdeptBy.Attribute(Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag,System.String,System.String,Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter)">
+            <summary>
+            Finds the Element by using its tag and HTML attribute (standard/custom) and value - Example for custom attribute: data-test-id.
+            </summary>
+            <param name="etag">etag - ElementTag of type enum; Example: input, a etc...</param>
+            <param name="attribute">attribute - string, pass DOM attribute name; Example: id</param>
+            <param name="value">value - string, pass attribute value</param>
+            <param name="eleFilter">The ele filter.</param>
+            <returns>
+            By - By Locator
+            </returns>
+            <exception cref="T:System.ArgumentNullException">attribute or value;Cannot find element with null values.</exception>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AdeptBy.Attributes(Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag,Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet[])">
+            <summary>
+            Finds the Element by using its tag and multiple HTML attribute (standard/custom) and value.
+            </summary>
+            <param name="etag">etag - ElementTag of type enum</param>
+            <param name="attributeSet">The attribute set.</param>
+            <returns>
+            By - By Locator
+            </returns>
+            <exception cref="T:System.ArgumentNullException">AttributeSet;Cannot find element with null values.</exception>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet">
+            <summary>
+            Class AttributeSet.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet.attrName">
+            <summary>
+            The attribute name.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet.attrValue">
+            <summary>
+            The attribute value.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet.attrFilter">
+            <summary>
+            The attribute filter.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet.#ctor(System.String,System.String,Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet" /> class.
+            </summary>
+            <param name="attributename">The attributename.</param>
+            <param name="value">The value.</param>
+            <param name="filter">The filter.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.AttributeSet.GetElementPropertyFilter(Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter)">
+            <summary>
+            Gets the element property filter.
+            </summary>
+            <param name="propertyFilter">The property filter.</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs">
+            <summary>
+            Class ChromeWebDriverEventArgs.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs.#ctor(OpenQA.Selenium.Chrome.ChromeDriver@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs"/> class.
+            </summary>
+            <param name="chromeDriver">The chrome driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs.#ctor(OpenQA.Selenium.Chrome.ChromeOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs"/> class.
+            </summary>
+            <param name="chromeOptions">The chrome options.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs.ChromeWebDriverOptions">
+            <summary>
+            Gets or sets the chrome web driver options.
+            </summary>
+            <value>The chrome web driver options.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ChromeWebDriverEventArgs.ChromeWebDriver">
+            <summary>
+            Gets or sets the chrome web driver.
+            </summary>
+            <value>The chrome web driver.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs">
+            <summary>
+            Class EdgeWebDriverEventArgs.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs.#ctor(OpenQA.Selenium.Edge.EdgeDriver@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs"/> class.
+            </summary>
+            <param name="edgeDriver">The edge driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs.#ctor(OpenQA.Selenium.Edge.EdgeOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs"/> class.
+            </summary>
+            <param name="edgeOptions">The edge options.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs.EdgeWebDriver">
+            <summary>
+            Gets or sets the edge web driver.
+            </summary>
+            <value>The edge web driver.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.EdgeWebDriverEventArgs.EdgeWebDriverOptions">
+            <summary>
+            Gets or sets the edge web driver options.
+            </summary>
+            <value>The edge web driver options.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag">
+            <summary>
+                Enum ElementTag - Allows to select the tag name to build the find logic.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.a">
+            <summary>
+                A
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.abbr">
+            <summary>
+                The abbr
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.acronym">
+            <summary>
+                The acronym
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.address">
+            <summary>
+                The address
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.applet">
+            <summary>
+                The applet
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.area">
+            <summary>
+                The area
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.article">
+            <summary>
+                The article
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.aside">
+            <summary>
+                The aside
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.audio">
+            <summary>
+                The audio
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.b">
+            <summary>
+                The b
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.base">
+            <summary>
+                The base_tag
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.basefont">
+            <summary>
+                The basefont
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.bdi">
+            <summary>
+                The bdi
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.bdo">
+            <summary>
+                The bdo
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.bgsound">
+            <summary>
+                The bgsound
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.big">
+            <summary>
+                The big
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.blink">
+            <summary>
+                The blink
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.blockquote">
+            <summary>
+                The blockquote
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.body">
+            <summary>
+                The body
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.br">
+            <summary>
+                The br
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.button">
+            <summary>
+                The button
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.canvas">
+            <summary>
+                The canvas
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.caption">
+            <summary>
+                The caption
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.center">
+            <summary>
+                The center
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.cite">
+            <summary>
+                The cite
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.code">
+            <summary>
+                The code
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.col">
+            <summary>
+                The col
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.colgroup">
+            <summary>
+                The colgroup
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.content">
+            <summary>
+                The content
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.data">
+            <summary>
+                The data
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.datalist">
+            <summary>
+                The datalist
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.dd">
+            <summary>
+                The dd
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.decorator">
+            <summary>
+                The decorator
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.del">
+            <summary>
+                The delete
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.details">
+            <summary>
+                The details
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.dfn">
+            <summary>
+                The DFN
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.dir">
+            <summary>
+                The dir
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.div">
+            <summary>
+                The div
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.dl">
+            <summary>
+                The dl
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.dt">
+            <summary>
+                The dt
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.element">
+            <summary>
+                The element
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.em">
+            <summary>
+                The em
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.embed">
+            <summary>
+                The embed
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.fieldset">
+            <summary>
+                The fieldset
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.figcaption">
+            <summary>
+                The figcaption
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.figure">
+            <summary>
+                The figure
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.font">
+            <summary>
+                The font
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.footer">
+            <summary>
+                The footer
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.form">
+            <summary>
+                The form
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.frame">
+            <summary>
+                The frame
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.frameset">
+            <summary>
+                The frameset
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h1">
+            <summary>
+                The h1
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h2">
+            <summary>
+                The h2
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h3">
+            <summary>
+                The h3
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h4">
+            <summary>
+                The h4
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h5">
+            <summary>
+                The h5
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.h6">
+            <summary>
+                The h6
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.head">
+            <summary>
+                The head
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.header">
+            <summary>
+                The header
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.hgroup">
+            <summary>
+                The hgroup
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.hr">
+            <summary>
+                The hr
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.html">
+            <summary>
+                The HTML
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.i">
+            <summary>
+                The i
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.iframe">
+            <summary>
+                The iframe
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.img">
+            <summary>
+                The img
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.input">
+            <summary>
+                The input
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.ins">
+            <summary>
+                The ins
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.isindex">
+            <summary>
+                The isindex
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.kbd">
+            <summary>
+                The KBD
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.keygen">
+            <summary>
+                The keygen
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.label">
+            <summary>
+                The label
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.legend">
+            <summary>
+                The legend
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.li">
+            <summary>
+                The li
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.link">
+            <summary>
+                The link
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.listing">
+            <summary>
+                The listing
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.main">
+            <summary>
+                The main
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.map">
+            <summary>
+                The map
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.mark">
+            <summary>
+                The mark
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.marquee">
+            <summary>
+                The marquee
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.menu">
+            <summary>
+                The menu
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.menuitem">
+            <summary>
+                The menuitem
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.meta">
+            <summary>
+                The meta
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.meter">
+            <summary>
+                The meter
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.nav">
+            <summary>
+                The nav
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.nobr">
+            <summary>
+                The nobr
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.noframes">
+            <summary>
+                The noframes
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.noscript">
+            <summary>
+                The noscript
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.object">
+            <summary>
+                The object_tag
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.ol">
+            <summary>
+                The ol
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.optgroup">
+            <summary>
+                The optgroup
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.option">
+            <summary>
+                The option
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.output">
+            <summary>
+                The output
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.p">
+            <summary>
+                The p
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.param">
+            <summary>
+                The parameter
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.plaintext">
+            <summary>
+                The plaintext
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.pre">
+            <summary>
+                The pre
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.progress">
+            <summary>
+                The progress
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.q">
+            <summary>
+                The q
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.rp">
+            <summary>
+                The rp
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.rt">
+            <summary>
+                The rt
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.ruby">
+            <summary>
+                The ruby
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.s">
+            <summary>
+                The s
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.samp">
+            <summary>
+                The samp
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.script">
+            <summary>
+                The script
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.section">
+            <summary>
+                The section
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.select">
+            <summary>
+                The select
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.shadow">
+            <summary>
+                The shadow
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.small">
+            <summary>
+                The small
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.source">
+            <summary>
+                The source
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.spacer">
+            <summary>
+                The spacer
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.span">
+            <summary>
+                The span
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.strike">
+            <summary>
+                The strike
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.strong">
+            <summary>
+                The strong
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.style">
+            <summary>
+                The style
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.sub">
+            <summary>
+                The sub
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.summary">
+            <summary>
+                The summary
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.sup">
+            <summary>
+                The sup
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.table">
+            <summary>
+                The table
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.tbody">
+            <summary>
+                The tbody
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.td">
+            <summary>
+                The td
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.template">
+            <summary>
+                The template
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.textarea">
+            <summary>
+                The textarea
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.tfoot">
+            <summary>
+                The tfoot
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.th">
+            <summary>
+                The th
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.thead">
+            <summary>
+                The thead
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.time">
+            <summary>
+                The time
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.title">
+            <summary>
+                The title
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.tr">
+            <summary>
+                The tr
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.track">
+            <summary>
+                The track
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.tt">
+            <summary>
+                The tt
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.u">
+            <summary>
+                The u
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.ul">
+            <summary>
+                The ul
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.var">
+            <summary>
+                The variable
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.video">
+            <summary>
+                The video
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.wbr">
+            <summary>
+                The WBR
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementTag.xmp">
+            <summary>
+                The XMP
+            </summary>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter">
+            <summary>
+            Enum PropertyFilter - To Pass property filters for XPath expression.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter.equals">
+            <summary>
+                The equals - Element Property Value filter of type - equals
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter.notequals">
+            <summary>
+                The notequals - Element Property Value filter of type - notequals
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter.contains">
+            <summary>
+                The contains - Element Property Value filter of type - contains
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter.startswith">
+            <summary>
+                The startswith - Element Property Value filter of type - starts-with
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter.endswith">
+            <summary>
+                The endswith - Element Property Value filter of type - ends-with
+            </summary>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs">
+            <summary>
+            Represents the arguments for the Firefox WebDriver Initialization Events.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs.#ctor(OpenQA.Selenium.Firefox.FirefoxOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs" /> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs.#ctor(OpenQA.Selenium.Firefox.FirefoxDriver@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs" /> class.
+            </summary>
+            <param name="firefoxWebDriver">The firefox web driver.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs.FirefoxDriverOptions">
+            <summary>
+            Gets or sets the firefox driver options.
+            </summary>
+            <value>The firefox driver options.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.FirefoxWebDriverEventArgs.FirefoxWebDriver">
+            <summary>
+            Gets or sets the firefox web driver.
+            </summary>
+            <value>The firefox web driver. (will be null in the Before Initialization event)</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs">
+            <summary>
+                Represents the arguments for the Internet Explorer Initialization events.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs.#ctor(OpenQA.Selenium.IE.InternetExplorerOptions)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs" /> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs.#ctor(OpenQA.Selenium.IE.InternetExplorerDriver@)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs" /> class.
+            </summary>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs.InternetExplorerDriverOptions">
+            <summary>
+                Gets or sets the internet explorer driver options.
+            </summary>
+            <value>The internet explorer driver options.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.InternetExplorerWebDriverEventArgs.InternetExplorerWebDriver">
+            <summary>
+                Gets or sets the internet explorer web driver.
+            </summary>
+            <value>The internet explorer web driver. (will be null in Before Initialization events)</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs">
+            <summary>
+            Class RemoteWebDriverEventArgs.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver@)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs" /> class.
+            </summary>
+            <param name="remoteWebDriver">The remote web driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs.#ctor(Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs" /> class.
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs.RemoteWebDriver">
+            <summary>
+            Gets or sets the remote web driver.
+            </summary>
+            <value>The remote web driver.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverEventArgs.Options">
+            <summary>
+            Gets or sets the desired capabilities.
+            </summary>
+            <value>The desired capabilities.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions">
+            <summary>
+            Class RemoteWebDriverOptions.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions.#ctor(System.Uri)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions" /> class.
+            </summary>
+            <param name="uri">The URI.</param>
+            <!--param name="driverOptions">The RemoteWebDriver options.</param-->
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions" /> class.
+            </summary>
+            <param name="url">The URL.</param>
+            <!--param name="driverOptions">The RemoteWebDriver options.</param-->
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions.Uri">
+            <summary>
+            Gets or sets the URI.
+            </summary>
+            <value>The URI.</value>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions.WebDriverOptions">
+            <summary>
+            Gets or sets the WebDriver Options.
+            </summary>
+            <value>The RemoteWebDriver Options.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.SingleWebDriverAttribute">
+            <inheritdoc />
+            <summary>
+                Class SingleWebDriverAttribute.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.SingleWebDriverAttribute.SingleWebDriver">
+            <summary>
+                The field that if set to <c>true</c> there will only be one instance of a WebDriver that is used by each of the
+                testmethods in the class. If set to <c>false</c> each testmethod will have its own isolated WebDriver instance.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.SingleWebDriverAttribute.#ctor(System.Boolean)">
+            <summary>
+                Determines whether or not each TestMethod in the TestClass should have its own isolated WebDriver instance or if
+                all of the TestMethods in the TestClass should share the same WebDriver instance.
+            </summary>
+            <param name="singleWebDriverInstance">
+                if set to <c>true</c> there will only be one instance of a WebDriver that is used
+                by each of the testmethods in the class. If set to <c>false</c> each testmethod will have its own isolated
+                WebDriver instance.
+            </param>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver">
+            <summary>
+            Extension Methods for the Selenium IWebDriver.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.WaitForElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            Waits For An element to be loaded in the DOM. This function will wait for the element for the specified TimeSpan.
+            </summary>
+            <param name="driver">Extension method type, IWebDriver</param>
+            <param name="by">The By Locator. For more information see <see href="https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_By.htm">Selenium 'By' API Documentation</see></param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>   
+            <param name="suppressException">if <c>true</c>, the timeout will not throw an exception. (Default is <c>true</c>)</param> 
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.WaitForPageLoad(OpenQA.Selenium.IWebDriver,System.TimeSpan,System.Boolean)">
+            <summary>
+            Waits for page to load.
+            </summary>
+            <param name="driver">Extension method type, IWebDriver</param>        
+            <param name="timeout">The amount of time to wait for the page to load before returning.</param>
+            <param name="suppressException">if <c>true</c>, the timeout will not throw an exception. (Default is <c>true</c>)</param> 
+            <returns><c>true</c> if page loads within the specified time <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException">driver;Driver must support javascript execution</exception>
+            <exception cref="T:OpenQA.Selenium.WebDriverTimeoutException">The specified wait time has expired. See Selenium Documentation for <see href="http://selenium.googlecode.com/git/docs/api/dotnet/?topic=html/T_OpenQA_Selenium_WebDriverTimeoutException.htm">OpenQA.Selenium.WebDriverTimeoutException</see></exception>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.ElementExists(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By)">
+            <summary>
+            Determines whether the element specified in the By locator exists in the DOM.
+            </summary>
+            <param name="driver">Extension method type, IWebDriver</param>
+            <param name="by">The By locator. For more information see <see href="https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_By.htm">Selenium 'By' API Documentation</see></param>
+            <returns><c>true</c> if the specified driver has element; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.FindElement(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.TimeSpan)">
+            <summary>
+            FindElement  - Wait for the element for specified time or until it exists and returns the IWebElement.
+            </summary>
+            <param name="driver">The driver - This web Driver</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <returns>IWebElement.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.FindElements(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.TimeSpan)">
+            <summary>
+            FindElements  - Waits for the elements for specified time or until they exist and returns the IWebElement Collection.
+            </summary>
+            <param name="driver">The driver - This web Driver</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the elements to load before returning.</param>
+            <returns>ReadOnlyCollection&lt;IWebElement&gt;.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.WaitForElementDisplayed(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForAnElementDisplayed  - Wait for the element to be displayed for specified time or until it is displayed within the specified time.
+            </summary>
+            <param name="driver">The driver - This web Driver</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param> 
+            <param name="suppressException">The suppressException - bool Type</param> 
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.WaitForElementVisible(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForAnElementVisible  - Wait for the element to be visible for specified time or until it is displayed within specified time
+            </summary>
+            <param name="driver">The driver - This web Driver</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param> 
+            <param name="suppressException">The suppressException - bool Type</param> 
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriver.WaitFor(OpenQA.Selenium.IWebDriver,OpenQA.Selenium.By,System.String,Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter,System.String,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitFor  - Webdriver Waits for child Element until the Condition is true.
+            </summary>
+            <param name="driver">The driver - This Web Driver</param>
+            <param name="by">The by - By Locator</param>
+            <param name="attributeName">The attributename - attributename</param>
+            <param name="elementPropertyFilter">The searchType - Search Type - contais, startswith, endswith, equals</param>
+            <param name="searchFor">string searchFor</param>   
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param> 
+            <param name="suppressException">The suppressException - bool Type</param> 
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitEventArgs">
+            <summary>
+                Class WebDriverInitEventArgs.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitEventArgs.#ctor(Dell.Adept.Web.WebDriverType)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitEventArgs" /> class.
+            </summary>
+            <param name="browser">The browser.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitEventArgs.WebDriverBrowser">
+            <summary>
+                Gets or sets the web driver browser.
+            </summary>
+            <value>The web driver browser.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs">
+            <summary>
+            Class OnWebDriverInitFailedEventArgs.
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs" /> class.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs.Error">
+            <summary>
+            The original error that occurred as the webdriver stopped.
+            </summary>
+            <value>The error.</value>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute">
+            <summary>
+            Class RetryWebDriverInitAttribute.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute.RetryInitialize">
+            <summary>
+            The retry initialize.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute.RetryMax">
+            <summary>
+            The retry maximum.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute.#ctor(System.Boolean,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute"/> class.
+            </summary>
+            <param name="retryInitialize">if set to <c>true</c> [retry initialize].</param>
+            <param name="retryMax">The maximum retry attempts.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.RetryWebDriverInitAttribute"/> class.
+            </summary>
+            <param name="retryMax">The retry maximum.</param>
+            <param name="retryInitialize">if set to <c>true</c> [retry initialize].</param>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement">
+            <summary>
+            Extension Methods for the Selenium IWebElement.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.ElementExists(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By)">
+            <summary>
+            Determines whether the specified element has the 'child' element.
+            </summary>
+            <param name="element">The element - this element.</param>
+            <param name="by">The By Locator. For more information see <see href="https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_By.htm">Selenium 'By' API Documentation</see></param>
+            <returns><c>true</c> if the specified element is not null; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitForElement(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForAnElement  - Waits for the element for specified time or until it exists.
+            </summary>
+            <param name="element">Current Element</param>
+            <param name="by">The By Locator. For more information see <see href="https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_By.htm">Selenium 'By' API Documentation</see></param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">if <c>true</c>, the timeout will not throw an exception. (Default is <c>true</c>)</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.FindElement(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.TimeSpan)">
+            <summary>
+            FindElement  - Waits for the element for specified time or until it exists and returns the IWebElement.
+            </summary>
+            <param name="element">The element - This web Element</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <returns>IWebElement.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.FindElements(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.TimeSpan)">
+            <summary>
+            FindElements  - Waits for the elements for specified time or until they exist and returns the IWebElement Collection.
+            </summary>
+            <param name="element">The element - This web Element</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <returns>ReadOnlyCollection&lt;IWebElement&gt;.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.IsElementVisible(OpenQA.Selenium.IWebElement)">
+            <summary>
+            IsElementVisible  - Check for element visibility and return boolean
+            </summary>
+            <param name="element">The element - This web Element</param>
+            <returns><c>true</c> if [is element visible] [the specified element]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitForElementDisplayed(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForElement  - Waits for the element for specified time or until it exists.
+            </summary>
+            <param name="element">Current Element</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitForElementVisible(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForElementVisible  - Waits for the element Visible for specified time or until it is displayed within specified time.
+            </summary>
+            <param name="element">The driver - This web Driver</param>
+            <param name="by">The by - Locator using By</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitForElementDisplayed(OpenQA.Selenium.IWebElement,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForAnElement  - Waits for the element for specified time or until it exists.
+            </summary>
+            <param name="element">Current Element</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitForElementVisible(OpenQA.Selenium.IWebElement,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitForAnElementVisible  - Waits for the element Visible for specified time or until it is displayed within specified time.
+            </summary>
+            <param name="element">The driver - This web Driver</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitFor(OpenQA.Selenium.IWebElement,System.String,Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter,System.String,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitFor  - WebElement Waits  until the Condition is true.
+            </summary>
+            <param name="element">The element - This Web Element</param>
+            <param name="attributeName">The attributename - attributename</param>
+            <param name="elementPropertyFilter">The searchType - Search Type - contains, startswith, endswith, equals</param>
+            <param name="searchFor">string searchFor</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.WaitFor(OpenQA.Selenium.IWebElement,OpenQA.Selenium.By,System.String,Dell.Adept.UI.Web.Testing.Framework.WebDriver.ElementPropertyFilter,System.String,System.TimeSpan,System.Boolean)">
+            <summary>
+            WaitFor  - WebElement Waits for Element Child until the Condition is true.
+            </summary>
+            <param name="element">The element - This Web Element</param>
+            <param name="by">The by - By Locator</param>
+            <param name="attributeName">The attributename - attributename</param>
+            <param name="elementPropertyFilter">The searchType - Search Type - contais, startswith, endswith, equals</param>
+            <param name="searchFor">string searchFor</param>
+            <param name="timeout">The amount of time to wait for the element to load before returning.</param>
+            <param name="suppressException">The suppressException - bool Type</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.Set(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            Clears the existing text from the element and sets the provided text.
+            </summary>
+            <param name="element">The element.</param>
+            <param name="text">The text.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.Set(OpenQA.Selenium.IWebElement,System.Boolean)">
+            <summary>
+            Selects/unselects the check box based on the state (true/false) passed to this method.
+            </summary>
+            <param name="element">The element - This web element</param>
+            <param name="state">if set to <c>true</c> [state].</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebElement.Select(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Selects the specified element.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>SelectElement</returns>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.Selects">
+            <summary>
+            Extension methods for Selects.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.Selects.SelectAll(OpenQA.Selenium.Support.UI.SelectElement,OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Selects all.
+            </summary>
+            <param name="sel">The sel.</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.Selects.MultiSelectByText(OpenQA.Selenium.Support.UI.SelectElement,System.String[],OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Selects all options in the list where a match is found with the array of strings passed in.
+            </summary>
+            <param name="sel">The select element</param>
+            <param name="list">The string list to search for matches</param>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebDriver.Selects.SelectByPartialText(OpenQA.Selenium.Support.UI.SelectElement,System.String,System.Boolean)">
+            <summary>
+            Selects the by partial text.
+            </summary>
+            <param name="sel">The select element.</param>
+            <param name="partialText">The partial text.</param>
+            <param name="selectAllMatches">if set to <c>true</c> [select all matches].</param>
+        </member>
+        <member name="T:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase">
+            <summary>
+                Class NonStaticW.
+            </summary>
+            <seealso cref="T:Dell.Adept.Core.Testing.MsTestBase" />
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.TestWebDriverCollection">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AdeptOutputVerbosity">
+            <summary>
+                Level of Adept Output that will be sent to the TestContext, values between 0 and 5, with 0 being none, and 5 being
+                verbose.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.DriverKey">
+            <summary>
+                Gets the appropriate collection key from the TestWebDriver collection.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.TestWebDriver">
+            <summary>
+                Gets or sets the test web driver.
+            </summary>
+            <value>The test web driver.</value>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterChromeWebDriverInitialized">
+            <summary>
+                Occurs [after chrome web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterEdgeWebDriverInitialized">
+            <summary>
+                Invoked after the Edge webdriver get initialized.
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterFirefoxWebDriverInitialized">
+            <summary>
+                Occurs [after firefox web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterInternetExplorerWebDriverInitialized">
+            <summary>
+                Occurs [after internet explorer web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterRemoteWebDriverInitialized">
+            <summary>
+                Invoked after to the RemoteWebDriver get initialized.
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AfterWebDriverInitialized">
+            <summary>
+                Occurs [after web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeChromeWebDriverInitialized">
+            <summary>
+                Occurs [before chrome web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeEdgeWebDriverInitialized">
+            <summary>
+                Invoked prior to the Edge webdriver get initialized.
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeFirefoxWebDriverInitialized">
+            <summary>
+                Occurs [before firefox web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeInternetExplorerWebDriverInitialized">
+            <summary>
+                Occurs [before internet explorer web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeRemoteWebDriverInitialized">
+            <summary>
+                Invoked prior to the RemoteWebDriver get initialized.
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BeforeWebDriverInitialized">
+            <summary>
+                Occurs [before web driver initialized].
+            </summary>
+        </member>
+        <member name="E:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.WebDriverInitializationFailed">
+            <summary>
+                Occurs when the [web driver stopped].
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterChromeWebDriverInitialized(OpenQA.Selenium.Chrome.ChromeDriver@)">
+            <summary>
+                Called [after chrome web driver initialized].
+            </summary>
+            <param name="driver">The chrome driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterEdgeWebDriverInitialized(OpenQA.Selenium.Edge.EdgeDriver@)">
+            <summary>
+                Called when [after edge web driver initialized].
+            </summary>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterFirefoxWebDriverInitialized(OpenQA.Selenium.Firefox.FirefoxDriver@)">
+            <summary>
+                Called [after firefox web driver initialized].
+            </summary>
+            <param name="driver">The firefox driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterInternetExplorerWebDriverInitialized(OpenQA.Selenium.IE.InternetExplorerDriver@)">
+            <summary>
+                Called [after internet explorer web driver initialized].
+            </summary>
+            <param name="driver">The ie driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterRemoteWebDriverInitialized(OpenQA.Selenium.Remote.RemoteWebDriver@)">
+            <summary>
+                Called when [after remote web driver initialized].
+            </summary>
+            <param name="driver">The driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnAfterWebDriverInitialized(Dell.Adept.Web.WebDriverType)">
+            <summary>
+                Called [after web driver initialized].
+            </summary>
+            <param name="webDriverType">Type of the web driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeChromeWebDriverInitialized(OpenQA.Selenium.Chrome.ChromeOptions@)">
+            <summary>
+                Called [before chrome web driver initialized].
+            </summary>
+            <param name="chromeOptions">The chrome options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeEdgeWebDriverInitialized(OpenQA.Selenium.Edge.EdgeOptions@)">
+            <summary>
+                Called when [before edge web driver initialized].
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeFirefoxWebDriverInitialized(OpenQA.Selenium.Firefox.FirefoxOptions@)">
+            <summary>
+                Called [before firefox web driver initialized].
+            </summary>
+            <param name="options">The options.</param>
+            TODO: FirefoxProfile will be removed
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeInternetExplorerWebDriverInitialized(OpenQA.Selenium.IE.InternetExplorerOptions@)">
+            <summary>
+                Called [before internet explorer web driver initialized].
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeRemoteWebDriverInitialized(Dell.Adept.UI.Web.Testing.Framework.WebDriver.RemoteWebDriverOptions@)">
+            <summary>
+                Called when [before remote web driver initialized].
+            </summary>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnBeforeWebDriverInitialized(Dell.Adept.Web.WebDriverType)">
+            <summary>
+                Called when [before web driver initialized].
+            </summary>
+            <param name="webDriverType">Type of the web driver.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OnWebDriverWebDriverInitializationFailed(Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs)">
+            <summary>
+                Called when the [web driver stopped unexpectedly].
+            </summary>
+            <param name="e">The <see cref="T:Dell.Adept.UI.Web.Testing.Framework.WebDriver.WebDriverInitFailedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.InitializeWebDriver(System.String)">
+            <summary>
+            Initializes the web driver.
+            </summary>
+            <param name="browser">The browser.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.OutputToConsole(System.String,System.Int32,System.String)">
+            <summary>
+                Outputs to console.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="source">The source of the message.</param>
+            <param name="severity">The severity.</param>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.GetWebDriverSetting">
+            <summary>
+                Initializes the web driver. The WebDriver is determined in the following order:
+                TestRunParameter (RunSettings file) WebDriver, Environment Variable WebDriver, Test Project App.Config
+                WebDriver appSetting. If none are found or valid, it will default to Chrome.
+            </summary>
+            <returns>The WebDriver setting value.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.BaseTestCleanup">
+            <summary>
+                Cleans Up the Test.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.UseSingleWebDriver(System.Type)">
+            <summary>
+                Initializes the Selenium WebDriver.
+            </summary>
+            <param name="t">The TestClass to check for the attribute. (Typically <code>this.GetType()</code></param>
+            <returns>IWebDriver</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.GetDriverType(System.String)">
+            <summary>
+                Gets the type of the driver.
+            </summary>
+            <param name="browserName">Name of the browser.</param>
+            <returns>WebDriverType.</returns>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.CloseAdeptDrivers">
+            <summary>
+                Releases the adept drivers.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.UI.Web.Testing.Framework.WebUIMsTestBase.AssemblyCleanup">
+            <summary>
+                Cleans up after the assembly is finished executing tests.
+            </summary>
+        </member>
+    </members>
+</doc>

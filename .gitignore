@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/DSA/v16
+/DSA/bin/Debug
+/DSA_API_Tests/bin/Debug
+/DSA_TESTS/bin/Debug
+/packages/Microsoft.Office.Interop.Excel.15.0.4795.1000
+/TestResults
+/DSA_API_Tests/obj/Debug
+/.vs/DSA/v15
+/.vs/dsa-test-automation/v15
+/obj
+/.vs
+/DSA_API_Tests/obj
+/ISG_API_Core/bin
+/ISG_API_Core/obj
+/Priyank_SalesOrder_Sol
+/DSA/obj/*
+/DSA_TESTS/obj/*

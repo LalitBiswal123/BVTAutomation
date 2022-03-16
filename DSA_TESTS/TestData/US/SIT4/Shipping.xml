@@ -1,0 +1,47 @@
+﻿<Rows>
+
+  <Row>
+    <Catalog_Name>EastPubOther</Catalog_Name>
+    <Catalog_Name_04>SmallBusiness</Catalog_Name_04>
+    <Catalog_Name_19>Consumer</Catalog_Name_19>
+    <Customer_Number_Comp19>540000000733</Customer_Number_Comp19>
+    <Customer_Number_Comp70>540000000726</Customer_Number_Comp70>
+    <Customer_Number_04>540000043956</Customer_Number_04>
+    <Customer_Number_08>540000171410</Customer_Number_08>
+    <Customer_Number_29>540000000731</Customer_Number_29>
+    <APOFPO_Customer>540000003215</APOFPO_Customer>
+    <End_User_Customer_Comp19>540000000733</End_User_Customer_Comp19>
+    <End_User_Customer_Comp70>540000002045</End_User_Customer_Comp70>
+    <SAO_Customer_Number>510000063308</SAO_Customer_Number>
+    <Order_Code_Comp_04>CTO04UL549014US</Order_Code_Comp_04>
+    <Order_Code_Comp19>cto1l9410142n1us</Order_Code_Comp19>
+    <Order_Code_Comp70>xctoo5055sffusr</Order_Code_Comp70>
+    <Order_Code_Comp08>AW2518HFSAP</Order_Code_Comp08>
+    <Customer_Number_LegacyFreeShipping>135539</Customer_Number_LegacyFreeShipping>
+    <Skus_29>927-7169</Skus_29>
+    <Skus>313-6412</Skus>
+    <Skus_19>AA870419</Skus_19>
+    <TiedSku19>338-BCDL</TiedSku19>
+    <TiedSku70>338-BCDL</TiedSku70>
+    <NonTiedItem>Monitors</NonTiedItem>
+    <Contract_code>70137</Contract_code>
+    <Quote_Name_04>Regression Test</Quote_Name_04>
+    <ManualShippingDiscount>5</ManualShippingDiscount>
+    <Shipping_Method_DellExpressDelivery>Express Delivery</Shipping_Method_DellExpressDelivery>
+    <Shipping_Method_DellExpeditedDelivery>Expedited Delivery</Shipping_Method_DellExpeditedDelivery>   
+    <Next_Day>Express Delivery</Next_Day>
+    <Second_Day>Expedited Delivery</Second_Day>
+    <Shipping_Method_StandardGround>Standard Delivery</Shipping_Method_StandardGround>
+    <Shipping_Method_MergeCenterShipping>Merge Center Shipping</Shipping_Method_MergeCenterShipping>
+    <Shipping_Method_VALSDelivery>VALS Delivery</Shipping_Method_VALSDelivery>
+    <ShippingMethod>APO/FPO PARCEL POST</ShippingMethod>
+    <Email_Id>Laxmipriya_pattnaik@dell.com</Email_Id>
+    <AttachmentType>PDF Attachment</AttachmentType>
+    <MABD1>7/8/2017</MABD1>
+    <MABD2>7/15/2017</MABD2>
+    <ToBeLinkedDPID>2001507465041</ToBeLinkedDPID>
+    <ValidateDPID>2003208786782</ValidateDPID>
+    <ApoFpoValues>APO, FPO, A.P.O, F.P.O</ApoFpoValues>
+    <Quote_Name>QE Quote Comp 70</Quote_Name>
+  </Row>
+</Rows>

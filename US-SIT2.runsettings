@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- For more information, see https://docs.microsoft.com/en-us/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019  -->
+
+<RunSettings>
+  <RunConfiguration>
+    <!-- 0 = As many processes as possible, limited by number of cores on machine, 1 = Sequential (1 process), 2-> Given number of processes up to limit by number of cores on machine-->
+    <MaxCpuCount>0</MaxCpuCount>
+    <!-- Disables in-assembly parallel execution, applies to both MSTest and NUnit -->
+    <DisableParallelization>false</DisableParallelization>
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+  </RunConfiguration>
+	
+  <TestRunParameters>
+    <Parameter name="BaseUrl" value="https://sales-sit-g2.dell.com/#/" />
+    <Parameter name="RunSettingsInputXMLFilePath"  value="TestData\US\SIT2" />
+    <Parameter name="PCFBaseUrl" value ="https://www-sit-g2.dell.com/salesapp/"/>
+    <Parameter name="TestDataDirectory" value=".\TestData\US\SIT2" />
+    <Parameter name="LocalProjectPath" value="C:\DSA_POC\AdeptPOC" />
+    <Parameter name="LocalBuild" value="" />
+    <Parameter name="LocalBuildBinReleasePath" value="\DSA_TESTS\bin\Debug" />
+    <Parameter name="LocalTestDataPath" value="\TestData\US\SIT2" />
+  </TestRunParameters>
+
+	<MSTest>
+    <DeploymentEnabled>true</DeploymentEnabled>
+
+    <Parallelize>
+      <Workers>0</Workers>
+      <Scope>MethodLevel</Scope>
+    </Parallelize>
+  </MSTest>
+</RunSettings>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adept.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Dell.Adept.Core.ITestable">
+            <summary>
+                The ITestable Interface is used to identify the object under test, its name, and its owner.
+            </summary>
+        </member>
+        <member name="P:Dell.Adept.Core.ITestable.TestablePath">
+            <summary>
+                Gets or sets the path for the object that is to be tested.
+                <example>URI for a web page;</example>
+            </summary>
+            <value>The path to the testable object.</value>
+        </member>
+        <member name="T:Dell.Adept.Core.IValidatable">
+            <summary>
+            The IValidatable Interface allows you to create universal validation code that will work on any type implementing the interface.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.Core.IValidatable.Validate">
+            <summary>
+            Validates this instance. <remarks>Validity is determined by the owner of the object.</remarks>
+            </summary>
+            <returns><c>true</c> if the object is valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Dell.Adept.Core.Testing.MsTestBase">
+            <summary>
+            The MsTestBase class that will be the base type for all Adept tests based on the MSTest2 standard.
+            </summary>
+            <seealso cref="T:Dell.Adept.Core.Testing.TestBase" />
+        </member>
+        <member name="P:Dell.Adept.Core.Testing.MsTestBase.TestContext">
+            <summary>
+            Gets or sets the test context which provides
+            information about and functionality for the current test run.
+            </summary>
+            <value>The test context.</value>
+        </member>
+        <member name="T:Dell.Adept.Core.Testing.TestBase">
+            <summary>
+            The TestBase class is the root type for all Adept test classes.
+            It is currently reserved for future use in order to support multiple test frameworks and test types.
+            </summary>
+        </member>
+    </members>
+</doc>

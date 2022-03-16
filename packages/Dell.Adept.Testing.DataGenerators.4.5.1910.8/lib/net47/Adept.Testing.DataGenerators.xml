@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Adept.Testing.DataGenerators</name>
+    </assembly>
+    <members>
+        <member name="T:Dell.Adept.Testing.DataGenerators.Primitive.Generator">
+            <summary>
+                The Generator class provides methods to generate random test data.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.AllValidChars">
+            <summary>
+                All valid chars
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.AlphaChars">
+            <summary>
+                The alpha chars
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.AlphaNumericChars">
+            <summary>
+                The alpha numeric chars
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.NumericChars">
+            <summary>
+                The numeric chars
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.SpecialValidEmailChars">
+            <summary>
+                The special valid email chars
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator._random">
+            <summary>
+                The _random
+            </summary>
+        </member>
+        <member name="T:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup">
+            <summary>
+                The enumeration allowing representing a preordained set of characters.
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup.AlphaOnly">
+            <summary>
+                The alpha characters only
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup.NumericOnly">
+            <summary>
+                The numeric characters only
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup.AlphaNumericOnly">
+            <summary>
+                Both alpha and numeric characters only
+            </summary>
+        </member>
+        <member name="F:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup.AnyCharacter">
+            <summary>
+                Any character, including, special characters.
+            </summary>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomBool">
+            <summary>
+                Returns a random boolean value
+            </summary>
+            <example>
+            Get some boolean
+            <code>bool random = Generator.RandomBool();</code>
+            </example>
+            <returns>Random boolean value</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomDayFunc(System.DateTime)">
+            <summary>
+                Generates a random day.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <returns>Func{DateTime}.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomDecimal(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+                Generates a random decimal.
+            </summary>
+            <param name="low">The low.</param>
+            <param name="mid">The mid.</param>
+            <param name="high">The high.</param>
+            <param name="nonNegative">if set to <c>true</c> [non negative].</param>
+            <returns>System.Decimal.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomDecimal(System.Boolean)">
+            <summary>
+                Generates a random decimal.
+            </summary>
+            <param name="nonNegative">if set to <c>true</c> returns value greater than 0.</param>
+            <returns>System.Decimal.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomDecimal(System.Double,System.Double)">
+            <summary>
+                Generates a random decimal.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+            <returns>System.Decimal.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomDecimal(System.Decimal,System.Decimal)">
+            <summary>
+                Generates a random decimal
+            </summary>
+            <param name="min">The minimum.</param>
+            <param name="max">The maximum.</param>
+            <returns>System.Decimal.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomEmailAddress(System.String)">
+            <summary>
+                Generates a random Email address using the supplied top level domain.
+            </summary>
+            <param name="tld">Top Level Domain (e.g. "com", "net", "org", etc), if not specified the default is "com"</param>
+            <returns>A randomly generated email address with the top level domain passed in.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomIPAddress">
+            <summary>
+                Generates a random IPv4 address
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomInt(System.Int32,System.Int32)">
+            <summary>
+                Generates a random integer (int32).
+            </summary>
+            <param name="min">The minimum.</param>
+            <param name="max">The maximum.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomInt32">
+            <summary>
+                Generates a random integer (int32).
+            </summary>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomString(System.Int32,System.String)">
+            <summary>
+                Generates a random string that is <paramref name="stringLength"/>
+                number of characters from the specified <paramref name="characterSet"/> 
+            </summary>
+            <param name="stringLength">Length of the random string.</param>
+            <param name="characterSet">The character set.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomString(System.Int32,Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomCharacterGroup)">
+            <summary>
+                Generates a random string that is <paramref name="stringLength"/>
+                number of characters from the specified <paramref name="characterGroup"/>.
+            </summary>
+            <param name="stringLength">The stringLength of the max.</param>
+            <param name="characterGroup">The character group.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomSentence(System.Int32,System.String)">
+            <summary>
+            Generates Random Sequence of strings (Sentence)
+            </summary>
+            <param name="numberOfWords">Number of words in a sentence.</param>
+            <param name="endSentenceWith">Sentence delimiter.</param>
+            <returns>Random sentence</returns>     
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomParagraph(System.Int32)">
+            <summary>
+            Generates Random sequence of sentences
+            </summary>
+            <param name="numberOfSentences">No of Sentences in a paragraph</param>
+            <returns>Random Paragraph</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomUrl(System.String)">
+            <summary>
+                Generates a random Internet Url at the top level domain specified. If no tld is specified the default is 'com'.
+            </summary>
+            <param name="tld">Top Level Domain</param>
+            <returns>string of the generated internet url</returns>
+        </member>
+        <member name="M:Dell.Adept.Testing.DataGenerators.Primitive.Generator.RandomeDateTime(System.DateTime)">
+            <summary>
+                Generates a random System.DateTime.
+            </summary>
+            <param name="startDateTime">The start date time.</param>
+            <returns>DateTime.</returns>
+        </member>
+    </members>
+</doc>

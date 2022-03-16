@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8fb8f8d2_002D5e39_002D4530_002Da980_002Dcbd67f1820fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="DVT_FT2_2337038_Create_Quote_with_Exceed_DAM_threshold_message_and_Submit_Goal_Lite_request" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::6E065DE2-F8EA-4D10-AF27-36D043215268::.NETFramework,Version=v4.7.2::DsaTest.TestCases.DVTs.AllFeatureDVTs.DVT_FT2_2337038_Create_Quote_with_Exceed_DAM_threshold_message_and_Submit_Goal_Lite_request&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::6E065DE2-F8EA-4D10-AF27-36D043215268::.NETFramework,Version=v4.7.2::DsaTest.TestCases.DVTs.AllFeatureDVTs.DVT_FT2_2760657_CreateOrder_Cancel_RebookOrder_With_NonAuth_Payment&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::6E065DE2-F8EA-4D10-AF27-36D043215268::.NETFramework,Version=v4.7.2::DsaTest.TestCases.DVTs.AllFeatureDVTs.DVT_FT2_2760688_CreateOrder_UpdateOrder_With_NonAuth_Payment&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

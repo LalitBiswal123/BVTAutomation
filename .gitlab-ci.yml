@@ -1,0 +1,119 @@
+stages:
+ - build
+ - copyPackage
+ - test
+variables:
+
+  #BASE_IMG: ubuntu-devops:18.04-v1.0.1
+  #CF_CLI_IMG: cf-cli:6.40.1-v1.2
+  NUGET_RESTORE_SOURCE_PATH: 'https://dcsartifacts.dell.com/artifactory/api/nuget/nuget'
+  BUILD_SLN: 'DSA.sln'
+  LTARGET: 'C:\DSABuilds\ADEPT-DSA-UI-HydHub\$CI_PIPELINE_ID'
+  TARGET: '$CI_PROJECT_DIR\target'
+  HydHub: ''
+  TESTFILE: '$LTARGET\DsaTest.DLL'
+  DATA_DEST: 'C:\DSABuilds\ADEPT-DSA-UI-HydHub\$CI_PIPELINE_ID\TestData'
+  DATA_SIT4: 'C:\DSABuilds\ADEPT-DSA-UI-HydHub\$CI_PIPELINE_ID\TestData\US\SIT4'
+  SETTING_SIT4: 'C:\DSABuilds\TestSettings\US-SIT4.runsettings'
+
+compile-package:
+  stage: build
+  before_script:
+   #- mkdir $LTARGET
+  script:
+   - echo "Build started"
+   - msbuild $CI_PROJECT_DIR\$BUILD_SLN "/p:Configuration=Release;RunCodeAnalysis=Never" /p:outdir=$LTARGET /t:ReBuild /t:restore /verbosity:minimal /clp:ErrorsOnly /nologo
+   - echo "Build finished"
+   - echo "Pipeline ID "$CI_PIPELINE_ID
+
+  tags:    
+    - DsaBuildRunner
+    
+Copy-Package-Hyderabad:
+  stage: copyPackage
+  
+  script:
+    - cp "$LTARGET\" "\\10.179.217.73\DsaBuilds\ADEPT-DSA-UI-Hyd\" -r
+  tags:    
+    - DsaBuildRunner
+  only:
+    - primary
+  except:
+    - schedules
+
+Copy-Package-US:
+  stage: copyPackage
+  
+  script:
+    - cp "$LTARGET\" "\\10.179.217.76\DsaBuilds\ADEPT-DSA-UI-US" -r
+  tags:    
+    - DsaBuildRunner
+  only:
+    - primary
+  except:
+    - schedules
+
+Copy-Package-Ireland:
+  stage: copyPackage
+  
+  script:
+    - cp "$LTARGET\" "\\10.179.217.74\DsaBuilds\ADEPT-DSA-UI-Ire" -r
+  tags:    
+    - DsaBuildRunner
+  only:
+    - primary
+  except:
+    - schedules
+
+Copy-Package-Production:
+  stage: copyPackage
+  
+  script:
+    - cp "$LTARGET\" "\\10.179.217.72\DsaBuilds\ADEPT-DSA-UI-Prod\" -r
+  tags:    
+    - DsaBuildRunner
+  only:
+    - master-fy22-1002
+  except:
+    - schedules
+    
+Copy-Package-Bangalore:
+  stage: copyPackage
+  
+  script:
+    - cp "$LTARGET\" "\\10.179.217.75\DsaBuilds\ADEPT-DSA-UI-Bangalore\" -r
+  tags:    
+    - DsaBuildRunner
+  only:
+    - primary
+  except:
+    - schedules
+
+Test:
+  stage: test
+  
+  before_script:
+   - $files = Get-ChildItem $configSource -File -include "*.config" -Recurse | Where-Object { $_.DirectoryName -like "*_config*" }
+   - Copy-Item -Path $files -Destination $LTARGET -Recurse -force
+  
+  
+  
+  script:
+   - echo "Test run started"
+   - cd $LTARGET
+   - vstest.console.exe  "$LTARGET\DSATest.DLL" /Settings:$RunSettingFilePath /Parallel /InIsolation /TestCaseFilter:"TestCategory=$Category" /Logger:trx /ResultsDirectory:$ResultsDir
+   - echo "Test run finished"
+  artifacts:
+    paths:
+      - $LTARGET
+  
+  after_script:
+   - $filter="*.trx"
+   - $latest = Get-ChildItem -Path $ResultsDir -Filter $filter | Sort-Object LastAccessTime -Descending | Select-Object -First 1
+   - cd $ReportGeneratorPath
+   - .\trxerconsole.exe "$ResultsDir\$latest" "$emailTo"
+  
+  only:
+    - schedules
+  tags:    
+    - DsaBuildRunner

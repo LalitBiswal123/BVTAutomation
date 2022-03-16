@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98763B66-3D95-4B26-BC32-044C04627CA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dsa</RootNamespace>
+    <AssemblyName>Dsa</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT1|AnyCPU'">
+    <OutputPath>bin\SIT1\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'PerfCI|AnyCPU' ">
+    <OutputPath>bin\SIT2\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT3|AnyCPU'">
+    <OutputPath>bin\SIT3\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'vPod1|AnyCPU'">
+    <OutputPath>bin\vPod1\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'vPod2|AnyCPU'">
+    <OutputPath>bin\vPod2\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'vPod3|AnyCPU'">
+    <OutputPath>bin\vPod3\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'vPod4|AnyCPU'">
+    <OutputPath>bin\vPod4\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod|AnyCPU'">
+    <OutputPath>bin\Prod\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CI|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CI\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEVINT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DEVINT\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FT1|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FT1\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FT3|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FT3\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FT4|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FT4\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FT6|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FT6\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FT7|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FT7\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT2|AnyCPU'">
+    <OutputPath>bin\SIT2\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT4|AnyCPU'">
+    <OutputPath>bin\SIT4\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dell.Adept.Core, Version=3.0.0.40514, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dell.Adept.Testing.DataGenerators.2.8.0.20161003\lib\Dell.Adept.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dell.Adept.Testing.DataGenerators, Version=2.8.6339.40514, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dell.Adept.Testing.DataGenerators.2.8.0.20161003\lib\Dell.Adept.Testing.DataGenerators.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dell.Adept.Testing.Verifications, Version=2.8.5.14726, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dell.Adept.Testing.Verifications.2.8.5\lib\Dell.Adept.Testing.Verifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Dell.Adept.UI.Web, Version=3.0.0.40514, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dell.Adept.UI.Web.3.0.1.20170508\lib\Dell.Adept.UI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dell.Adept.UI.Web.Support, Version=3.0.0.40514, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dell.Adept.UI.Web.Support.3.0.1.20170508\lib\Dell.Adept.UI.Web.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.19.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.2\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.19.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.19.2\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Code\New folder\EXISTING TESTs\packages\Office15\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\AccountIDs.cs" />
+    <Compile Include="Constants\AccountPaths.cs" />
+    <Compile Include="Constants\AddQuotesPageConstants.cs" />
+    <Compile Include="Constants\AdminIDs.cs" />
+    <Compile Include="Constants\AdminPaths.cs" />
+    <Compile Include="Constants\CustCatalogConstants.cs" />
+    <Compile Include="Constants\CustomerIDs.cs" />
+    <Compile Include="Constants\DAMID.cs" />
+    <Compile Include="Constants\GoalIDs.cs" />
+    <Compile Include="Constants\HomeIDs.cs" />
+    <Compile Include="Constants\MergeQuoteConstants.cs" />
+    <Compile Include="Constants\OpportunityIDs.cs" />
+    <Compile Include="Constants\OrderIDs.cs" />
+    <Compile Include="Constants\PomGmirIDs.cs" />
+    <Compile Include="Constants\ProductConfigureIDs.cs" />
+    <Compile Include="Constants\ProductIDs.cs" />
+    <Compile Include="Constants\QuoteCreatePageConstants.cs" />
+    <Compile Include="Constants\QuoteEmailQueuedPageConstants.cs" />
+    <Compile Include="Constants\QuoteIDs.cs" />
+    <Compile Include="Constants\QuoteListPageConstants.cs" />
+    <Compile Include="Constants\QuoteSplitConstants.cs" />
+    <Compile Include="Constants\QuoteSplitResultsPageConstants.cs" />
+    <Compile Include="Constants\RecentActivitiesIDs.cs" />
+    <Compile Include="Constants\SendQuotePageConstants.cs" />
+    <Compile Include="Constants\SplitLineItemConstants.cs" />
+    <Compile Include="Constants\SplitPaloozaPageConstants.cs" />
+    <Compile Include="Constants\SplitQuoteByQuantityPageConstants.cs" />
+    <Compile Include="DataModels\Address.cs" />
+    <Compile Include="DataModels\AddressRow.cs" />
+    <Compile Include="DataModels\CreditCard.cs" />
+    <Compile Include="DataModels\Dpa.cs" />
+    <Compile Include="DataModels\FinancialPrefrences.cs" />
+    <Compile Include="DataModels\GiftCard.cs" />
+    <Compile Include="DataModels\ItemSummaryValues.cs" />
+    <Compile Include="DataModels\Contact.cs" />
+    <Compile Include="DataModels\QuoteData.cs" />
+    <Compile Include="DataModels\NewCustomer.cs" />
+    <Compile Include="DataModels\ItemQuoteData.cs" />
+    <Compile Include="DataModels\QuoteSummaryValues.cs" />
+    <Compile Include="DataModels\QuotesXml.cs" />
+    <Compile Include="DataModels\ShippingGroupSummary.cs" />
+    <Compile Include="DataModels\SplitQuoteData.cs" />
+    <Compile Include="Enums\ActionType.cs" />
+    <Compile Include="Enums\AddressLine.cs" />
+    <Compile Include="Enums\BusinessUnitType.cs" />
+    <Compile Include="Enums\Catalogs.cs" />
+    <Compile Include="Enums\CompanyNumber.cs" />
+    <Compile Include="Enums\CustomerSearchTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\MainMenuItem.cs" />
+    <Compile Include="Enums\PaymentMethodType.cs" />
+    <Compile Include="Enums\ProductSearchType.cs" />
+    <Compile Include="Enums\RecommendedItemType.cs" />
+    <Compile Include="Enums\SolutionSearchResultsType.cs" />
+    <Compile Include="Enums\SolutionSearchType.cs" />
+    <Compile Include="Enums\SplitType.cs" />
+    <Compile Include="Enums\SplitLineValidation.cs" />
+    <Compile Include="Enums\Tabs.cs" />
+    <Compile Include="Pages\Account\AccountDetailsPage.cs" />
+    <Compile Include="Pages\Account\AccountRevenuePage.cs" />
+    <Compile Include="Pages\Account\AccountSearchPage.cs" />
+    <Compile Include="Pages\Account\AccountSearchResultsPage.cs" />
+    <Compile Include="Pages\Account\AccountViewAllCustomersPage.cs" />
+    <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\Customer\CustomerDashboardPage.cs" />
+    <Compile Include="Pages\Customer\CustomerDashboardPage_TabView.cs" />
+    <Compile Include="Pages\DAMRequestsPage.cs" />
+    <Compile Include="Pages\DAMReqPendingApprovalsPage.cs" />
+    <Compile Include="Pages\Order\HeldOrderPage.cs" />
+    <Compile Include="Pages\POM\pomuploadPage.cs" />
+    <Compile Include="Pages\POM\MyQueue.cs" />
+    <Compile Include="Pages\POM\POMRecordDetailsPage.cs" />
+    <Compile Include="Pages\POM\POMSearchPage.cs" />
+    <Compile Include="Pages\POM\WorkgroupSummary.cs" />
+    <Compile Include="Pages\SolutionSearchResultPage.cs" />
+    <Compile Include="Pages\SolutionSearchPage.cs" />
+    <Compile Include="Pages\AddConfigServiceComments.cs" />
+    <Compile Include="Pages\AddConfigServiceDialog.cs" />
+    <Compile Include="Pages\AddCustomerDialog.cs" />
+    <Compile Include="Pages\AddressPickerPage.cs" />
+    <Compile Include="Pages\AddUsersPage.cs" />
+    <Compile Include="Pages\Admin\AdminConsolePage.cs" />
+    <Compile Include="Pages\Admin\AdministrationPage.cs" />
+    <Compile Include="Pages\Admin\AdminPage.cs" />
+    <Compile Include="Pages\Admin\AdminPathsPage.cs" />
+    <Compile Include="Pages\AnalyticsPage.cs" />
+    <Compile Include="Pages\APOS\AposConfigurePage.cs" />
+    <Compile Include="Pages\APOS\ServiceTagGroupsPage.cs" />
+    <Compile Include="Pages\APOS\ServiceTagSearchPage.cs" />
+    <Compile Include="Pages\ARB\ARBConfigurePage.cs" />
+    <Compile Include="Pages\ARB\DellOutletProductsPage.cs" />
+    <Compile Include="Pages\AssociateOpportunityPage.cs" />
+    <Compile Include="Pages\AutomationPage.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\CancelOrderPage.cs" />
+    <Compile Include="Pages\CreateProfilePage.cs" />
+    <Compile Include="Pages\CustCatalogPage.cs" />
+    <Compile Include="Pages\Admin\CustomerBaseCreatePage.cs" />
+    <Compile Include="Pages\Admin\CustomerBasesManagePage.cs" />
+    <Compile Include="Pages\CustomerCommunicationPage.cs" />
+    <Compile Include="Pages\Customer\AddMyAccountPopup.cs" />
+    <Compile Include="Pages\Customer\AddShippingAddressPopup.cs" />
+    <Compile Include="Pages\Customer\CustomerCreatePage.cs" />
+    <Compile Include="Pages\Customer\CustomerDetailsPage.cs" />
+    <Compile Include="Pages\Customer\CustomerPartyResultsPage.cs" />
+    <Compile Include="Pages\Customer\CustomerSearchResultsPage.cs" />
+    <Compile Include="Pages\Customer\OrganizationSearchPage.cs" />
+    <Compile Include="Pages\Customer\PersonSearchPage.cs" />
+    <Compile Include="Pages\Customer\ViewAddressesPage.cs" />
+    <Compile Include="Pages\Customer\ViewAllCustomerAccountPage.cs" />
+    <Compile Include="Pages\Customer\ViewNotesPage.cs" />
+    <Compile Include="Pages\DamRequestPopup.cs" />
+    <Compile Include="Pages\DfsPaymentPage.cs" />
+    <Compile Include="Pages\DpaPaymentPage.cs" />
+    <Compile Include="Pages\DsaPageBase.cs" />
+    <Compile Include="Pages\EditProfileinManageProfilePage.cs" />
+    <Compile Include="Pages\ExportAuditLogPage.cs" />
+    <Compile Include="Pages\ExportProfileUsers.cs" />
+    <Compile Include="Pages\FlexBillingAddCreditCardPopup.cs" />
+    <Compile Include="Pages\FlexBillingRenewalPage.cs" />
+    <Compile Include="Pages\GoalPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\ImportCartPopup.cs" />
+    <Compile Include="Pages\MainMenu.cs" />
+    <Compile Include="Pages\Admin\ManageProfilesPage.cs" />
+    <Compile Include="Pages\Order\EmailConfirmationPage.cs" />
+    <Compile Include="Pages\Order\ExportCompliancePage.cs" />
+    <Compile Include="Pages\PreviewQuoteEmail.cs" />
+    <Compile Include="Pages\ProFormaInvoicePage.cs" />
+    <Compile Include="Pages\Quote\MergeQuotePage.cs" />
+    <Compile Include="Pages\MyPermissionsPage.cs" />
+    <Compile Include="Pages\Opportunity\OpportunityDetailsPage.cs" />
+    <Compile Include="Pages\Opportunity\OpportunityPage.cs" />
+    <Compile Include="Pages\Opportunity\OpportunityUpdatePage.cs" />
+    <Compile Include="Pages\Opportunity\OpportunityViewAllPage.cs" />
+    <Compile Include="Pages\Order\OrderDetailsPage.cs" />
+    <Compile Include="Pages\Order\OrderHistoryReportPage.cs" />
+    <Compile Include="Pages\Order\OrderListPage.cs" />
+    <Compile Include="Pages\Order\OrderPage.cs" />
+    <Compile Include="Pages\Order\OrderReviewPage.cs" />
+    <Compile Include="Pages\Order\PaymentsPage.cs" />
+    <Compile Include="Pages\Order\OrderSearchPage.cs" />
+    <Compile Include="Pages\Order\OrderSearchResultsPage.cs" />
+    <Compile Include="Pages\PermissionAssignmentsPage.cs" />
+    <Compile Include="Pages\PomGmirPage.cs" />
+    <Compile Include="Pages\PreviewOrderCodePage.cs" />
+    <Compile Include="Pages\Product\ProductConfigurePage.cs" />
+    <Compile Include="Pages\Product\ProductDetailsPage.cs" />
+    <Compile Include="Pages\Product\ProductDetailsPagePart.cs" />
+    <Compile Include="Pages\ProductSearchPage.cs" />
+    <Compile Include="Pages\Product\ProductSearchResultsPage.cs" />
+    <Compile Include="Pages\Product\ProductAdvSearchPagePart.cs" />
+    <Compile Include="Pages\Product\ProductListViewPagePart.cs" />
+    <Compile Include="Pages\Product\ProductSearchPage.cs" />
+    <Compile Include="Pages\Quote\QuoteDetailsPage.cs" />
+    <Compile Include="Pages\Quote\QuoteEmailQueuedPage.cs" />
+    <Compile Include="Pages\Quote\QuoteListPage.cs" />
+    <Compile Include="Pages\Quote\QuotePage.cs" />
+    <Compile Include="Pages\Quote\QuoteSavePage.cs" />
+    <Compile Include="Pages\Quote\QuoteSearchPage.cs" />
+    <Compile Include="Pages\Quote\QuoteSearchResultsPage.cs" />
+    <Compile Include="Pages\Quote\QuoteSplitResultsPage.cs" />
+    <Compile Include="Pages\Quote\CreateQuotePage.cs" />
+    <Compile Include="Pages\Quote\QuoteFooter.cs" />
+    <Compile Include="Pages\Quote\QuoteSummary.cs" />
+    <Compile Include="Pages\RebookOrderPage.cs" />
+    <Compile Include="Pages\RecentActivityPage.cs" />
+    <Compile Include="Pages\ReportingPage.cs" />
+    <Compile Include="Pages\MyPreferencesPage.cs" />
+    <Compile Include="Pages\SalesRepTaggingPage.cs" />
+    <Compile Include="Pages\SaveAsEquotePage.cs" />
+    <Compile Include="Pages\SelectCatalogDialog.cs" />
+    <Compile Include="Pages\SelectCompanyNumberDailog.cs" />
+    <Compile Include="Pages\SelectNonTiedSkuDialog.cs" />
+    <Compile Include="Pages\SendPoRequestPage.cs" />
+    <Compile Include="Pages\SendQuotePage.cs" />
+    <Compile Include="Pages\APOS\ServiceTagSearchResultPage.cs" />
+    <Compile Include="Pages\SharedPage.cs" />
+    <Compile Include="Pages\Quote\SplitLineItemPage.cs" />
+    <Compile Include="Pages\Quote\SplitPaloozaPage.cs" />
+    <Compile Include="Pages\Quote\SplitQuoteByQuantityPage.cs" />
+    <Compile Include="Pages\Solutions\FeedbackDialog.cs" />
+    <Compile Include="Pages\Solutions\SolutionConfigurationPage.cs" />
+    <Compile Include="Pages\Solutions\GuidedJourneyPage.cs" />
+    <Compile Include="Pages\Solutions\YourSolutionsPage.cs" />
+    <Compile Include="Pages\UploadPOToPOMPage.cs" />
+    <Compile Include="Pages\UserDetailsPage.cs" />
+    <Compile Include="Pages\YourCustomerPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\DsaUtil.cs" />
+    <Compile Include="Utils\Encryptor.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\WebDriverUtil.cs" />
+    <Compile Include="Utils\XmlUtils.cs" />
+    <Compile Include="WebAPI\ClassFiles\Address.cs" />
+    <Compile Include="WebAPI\ClassFiles\Comment.cs" />
+    <Compile Include="WebAPI\ClassFiles\CommerceContacts.cs" />
+    <Compile Include="WebAPI\ClassFiles\Company.cs" />
+    <Compile Include="WebAPI\ClassFiles\Contacts.cs" />
+    <Compile Include="WebAPI\ClassFiles\Contract.cs" />
+    <Compile Include="WebAPI\ClassFiles\Customer.cs" />
+    <Compile Include="WebAPI\ClassFiles\CustomerContext.cs" />
+    <Compile Include="WebAPI\ClassFiles\FinancialDetail.cs" />
+    <Compile Include="WebAPI\ClassFiles\Message.cs" />
+    <Compile Include="WebAPI\ClassFiles\Name.cs" />
+    <Compile Include="WebAPI\ClassFiles\NewAddress.cs" />
+    <Compile Include="WebAPI\ClassFiles\NewAddressContact.cs" />
+    <Compile Include="WebAPI\ClassFiles\NewAddressContactDellPrint.cs" />
+    <Compile Include="WebAPI\ClassFiles\NewCustomer.cs" />
+    <Compile Include="WebAPI\ClassFiles\NewNote.cs" />
+    <Compile Include="WebAPI\ClassFiles\Note.cs" />
+    <Compile Include="WebAPI\ClassFiles\Notification.cs" />
+    <Compile Include="WebAPI\ClassFiles\Phone.cs" />
+    <Compile Include="WebAPI\ClassFiles\RequiredField.cs" />
+    <Compile Include="WebAPI\ClassFiles\SalesRep.cs" />
+    <Compile Include="WebAPI\Constants\RestEndPoints.cs" />
+    <Compile Include="WebAPI\Enums\PaymentCategoryType.cs" />
+    <Compile Include="WebAPI\Interface\IDsaContext.cs" />
+    <Compile Include="WebAPI\Interface\IHasCustomerContext.cs" />
+    <Compile Include="WebAPI\Utils\WebHelpers.cs" />
+    <Compile Include="Workflows\AccountSearchWorkflow.cs" />
+    <Compile Include="Workflows\AposWorkflow.cs" />
+    <Compile Include="Workflows\ArbWorkflow.cs" />
+    <Compile Include="Workflows\CancelOrderWorkflow.cs" />
+    <Compile Include="Workflows\CFOWorkflow.cs" />
+    <Compile Include="Workflows\ConfigurationWorkflow.cs" />
+    <Compile Include="Workflows\CopyCustomerWorkflow.cs" />
+    <Compile Include="Workflows\CreateOrderWorkflow.cs" />
+    <Compile Include="Workflows\CustomerDashboardWorkflow.cs" />
+    <Compile Include="Workflows\CustomerSearchWorkflow.cs" />
+    <Compile Include="Workflows\ExportQuoteWorkflow.cs" />
+    <Compile Include="Workflows\OpportunityWorkflow.cs" />
+    <Compile Include="Workflows\PriceValidations.cs" />
+    <Compile Include="Workflows\ProFormaInvoiceWorkflow.cs" />
+    <Compile Include="Workflows\SolutionsWorkflow.cs" />
+    <Compile Include="Workflows\CreateQuoteWorkflow.cs" />
+    <Compile Include="Workflows\CustomerOutputWorkflow.cs" />
+    <Compile Include="Workflows\CreateCustomerWorkflow.cs" />
+    <Compile Include="Workflows\DellOutletProductsWorkflow.cs" />
+    <Compile Include="Workflows\HomeWorkflow.cs" />
+    <Compile Include="Workflows\MergeQuoteWorkflow.cs" />
+    <Compile Include="Workflows\ProductSearchWorkflow.cs" />
+    <Compile Include="Workflows\QuoteSearchWorkflow.cs" />
+    <Compile Include="Workflows\QuoteValidationWorkflow.cs" />
+    <Compile Include="Workflows\RecentActivitiesWorkflow.cs" />
+    <Compile Include="Workflows\SalesChannelSelectWorkflow.cs" />
+    <Compile Include="Workflows\SplitQuoteflow.cs" />
+    <Compile Include="Workflows\StandardConfigWorkflow.cs" />
+    <Compile Include="Workflows\UpdateOrderWorkflow.cs" />
+    <Compile Include="Workflows\UploadPOToPOMWorkflow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Utils\AutoItScripts\UploadPomFileParam.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
