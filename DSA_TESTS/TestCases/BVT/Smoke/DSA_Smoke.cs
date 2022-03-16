@@ -38,7 +38,7 @@ namespace DsaTest.TestCases.BVT.Smoke
             var products = DsaUtil.GetProductDataFromCsv(orderCodes, skus);
             CreateQuoteWorkflow.CreateQuoteFromCustomerSearch(TestWebDriver, customerNumber, products, null, null, false);
 
-            //Save Quote and PCF Checkout
+            //Save Quote and Checkout
             new PCFQuoteSummaryPage(TestWebDriver).SaveQuote();
             new PCFQuoteSummaryPage(TestWebDriver).WaitForQuoteValidationToComplete();
             string quoteNo = new PCFQuoteSummaryPage(TestWebDriver).GetQuoteNumber();
