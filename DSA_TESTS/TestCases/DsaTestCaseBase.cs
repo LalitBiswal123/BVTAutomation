@@ -165,12 +165,10 @@ namespace DsaTest.TestCases
         {
             try
             {
-
                 string navigateUrl = TestContext.Properties["BaseUrl"].ToString();
-
                 string userName = ConfigurationManager.AppSettings["UserName"];
-
-
+                TestWebDriver.NavigateHomePage(navigateUrl, userName);
+                TestWebDriver.VerifyBusyOverlayNotDisplayed();
             }
             catch (Exception e)
             {

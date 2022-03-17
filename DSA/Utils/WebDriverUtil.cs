@@ -30,7 +30,7 @@ namespace Dsa.Utils
         /// <summary>
         /// The element wait time. Default is set to 60 seconds.
         /// </summary>
-        public static TimeSpan WaitTime = TimeSpan.FromSeconds(90);
+        public static TimeSpan WaitTime = TimeSpan.FromSeconds(150);
         public static string ParentHandler;
         public static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                        
@@ -115,9 +115,12 @@ namespace Dsa.Utils
             
                 driver.Navigate().GoToUrl(baseUrl);
                     Log.Info(string.Format("Navigated to {0}", baseUrl));
-                //driver.RefreshCurrentPage();
-                //driver.WaitForPageLoad(new TimeSpan(5000)); 
-              
+            //driver.RefreshCurrentPage();
+            //driver.WaitForPageLoad(new TimeSpan(5000)); 
+
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(90));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("welcomeMessage")));
+
             ParentHandler = driver.CurrentWindowHandle;
             Log.Info("Loggedin User : " + new HomePage(driver).MsgWelcome.GetText(driver).Replace("Welcome, ", ""));
             }
