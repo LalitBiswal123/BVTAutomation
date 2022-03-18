@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Adept.Core, Version=4.5.1910.8, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Adept.Core">
       <HintPath>..\packages\Dell.Adept.Core.4.5.1910.8\lib\net47\Adept.Core.dll</HintPath>
     </Reference>
     <Reference Include="Adept.Testing.DataGenerators, Version=4.5.1910.8, Culture=neutral, processorArchitecture=MSIL">
