@@ -58,6 +58,10 @@ namespace DsaTest.TestCases
                 //Create TestData folder in the deployment directory path
                 Directory.CreateDirectory(testDeploymentDirPath);
 
+                //string testDataDestDirPath = ".\\TestData";
+                //DirectoryInfo destDir = new DirectoryInfo(testDataDestDirPath);
+                //Console.WriteLine("destDir: " + destDir);
+
                 //Copy files from data source path to deployment path
                 foreach (FileInfo file in sourceDir.GetFiles("*.*", SearchOption.TopDirectoryOnly))
                 {
