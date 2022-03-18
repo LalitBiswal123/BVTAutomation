@@ -23,7 +23,7 @@ namespace DsaTest.TestCases.BVT.Smoke
         log4net.ILog Log = Dsa.Utils.WebDriverUtil.Log;
 
         [TestMethod]
-        [Owner("Lalit")]
+        [Owner("Lalit Biswal")]
         [Description("DSA create quote and order")]
         //Provider Name, Connection String, Table Name, Access method.
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", @"TestData\Shipping.xml", "Row", DataAccessMethod.Sequential)]
