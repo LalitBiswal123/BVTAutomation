@@ -24,7 +24,7 @@ namespace DsaTest.TestCases.BVT.Smoke
 
         [TestMethod]
         [Owner("Lalit Biswal")]
-        [Description("DSA workflow to create quote and order")]
+        [Description("DSA workflow to create quote and order.")]
         //Provider Name, Connection String, Table Name, Access method.
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.XML", @"TestData\Shipping.xml", "Row", DataAccessMethod.Sequential)]
         [DeploymentItem(@"TestData\Shipping.xml", "TestData")]
