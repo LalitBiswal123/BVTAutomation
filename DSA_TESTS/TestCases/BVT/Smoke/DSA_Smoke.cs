@@ -50,6 +50,7 @@ namespace DsaTest.TestCases.BVT.Smoke
             new PCFQuoteSummaryPage(TestWebDriver).BtnContinueToCheckout.Click();
             new PCFQuoteSummaryPage(TestWebDriver).SalesRepMismatchPopup();
 
+            //Complaience page 
             Log.Info("Click Continue on Complaiance & Notification Page");
             TestWebDriver.PCFVerifyBusyOverlayNotDisplayed();
             new PCFComplianceNotificationsPage(TestWebDriver).ContinueButton.Click();
