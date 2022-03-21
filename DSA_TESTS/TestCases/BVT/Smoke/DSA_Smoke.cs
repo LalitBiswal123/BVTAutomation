@@ -60,6 +60,7 @@ namespace DsaTest.TestCases.BVT.Smoke
             new ChannelPaymentPage(TestWebDriver).SelectPaymentMethod(TestWebDriver, PaymentMethodType.WireTransfer);
             new ChannelPaymentPage(TestWebDriver).BtnContinueToCheckout.Click(TestWebDriver);
 
+            //Order Review page
             Log.Info("Begin GMOR Here");
             new PCFOrderReviewPage(TestWebDriver).CompleteGMOR();
 
