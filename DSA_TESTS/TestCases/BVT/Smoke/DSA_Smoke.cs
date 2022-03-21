@@ -60,7 +60,6 @@ namespace DsaTest.TestCases.BVT.Smoke
             new ChannelPaymentPage(TestWebDriver).BtnContinueToCheckout.Click(TestWebDriver);
 
             Log.Info("Begin GMOR Here");
-            //TestWebDriver.VerifyBusyOverlayNotDisplayed_PCFConvergence();
             new PCFOrderReviewPage(TestWebDriver).CompleteGMOR();
 
             Log.Info("Place Order Here");
